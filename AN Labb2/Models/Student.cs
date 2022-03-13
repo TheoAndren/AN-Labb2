@@ -12,6 +12,6 @@ namespace AN_Labb2.Models
 
         public string StudentName { get; set; }
 
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

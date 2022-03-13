@@ -5,8 +5,17 @@ using System.Text;
 
 namespace AN_Labb2.Models
 {
-    public class SchoolDbContext : DbContext
+    public partial class SchoolDbContext : DbContext
     {
+
+        public SchoolDbContext()
+        {
+        }
+
+        public SchoolDbContext(DbContextOptions<SchoolDbContext> options)
+            : base(options)
+        {
+        }
         public DbSet<Student> Students { get; set; }
 
         public DbSet<Teacher> Teachers { get; set; }
@@ -19,5 +28,7 @@ namespace AN_Labb2.Models
         {
             optionsBuilder.UseSqlServer("Data Source = DESKTOP-RS3CPJF;Initial Catalog=SchoolWest;Integrated Security = True;");
         }
+
+        
     }
 }
